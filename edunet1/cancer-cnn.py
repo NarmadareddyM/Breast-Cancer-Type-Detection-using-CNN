@@ -164,8 +164,11 @@ print(f"🔗 Public URL: {public_url}")
 with open("app.py", "w") as f:
     f.write(app_code)
 
-# 🔹 10️⃣ Set up ngrok
-!ngrok authtoken 2tdAfI41DQw3o0rkbqdL9E5QqIU_2WervUYcnFLtREyrQY1J  # Replace with your ngrok token
+# 🔹 10️⃣ Set up ngrokimport subprocess
+
+# Authenticate ngrok (Make sure the token is inside quotes!)
+subprocess.run(["ngrok", "authtoken", "2tdAfI41DQw3o0rkbqdL9E5QqIU_2WervUYcnFLtREyrQY1J"], check=True)
+  # Replace with your ngrok token
 public_url = ngrok.connect("http://localhost:8501")
 print(f"🔗 Public URL: {public_url}")
 
