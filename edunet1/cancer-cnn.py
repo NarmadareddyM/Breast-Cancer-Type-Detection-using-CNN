@@ -9,7 +9,18 @@ Original file is located at
 
 # Install necessary libraries
 
+import os
+import subprocess
+from pyngrok import ngrok
 
+# Authenticate ngrok (Replace with your actual token)
+subprocess.run(["ngrok", "authtoken", "2tdAfI41DQw3o0rkbqdL9E5QqIU_2WervUYcnFLtREyrQY1J"], check=True)
+
+# Start Streamlit in the background
+os.system("streamlit run app.py &")
+# Install required libraries
+subprocess.run(["pip", "install", "streamlit", "pyngrok", "opencv-python-headless", "numpy", "tensorflow", "scikit-learn", "zipfile36"], check=True)
+subprocess.run(["pip", "install", "--user", "streamlit", "pyngrok", "opencv-python-headless", "numpy", "tensorflow", "scikit-learn", "zipfile36"], check=True)
 import streamlit as st
 import cv2
 import numpy as np
