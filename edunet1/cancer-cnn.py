@@ -145,7 +145,12 @@ if uploaded_file is not None:
         st.markdown(f"<div style='background-color: {desc_color}; padding: 8px; border-radius: 8px;'><p style='color: white; font-size: 15px;'>📌 <b>Description:</b> {description}</p></div>", unsafe_allow_html=True)
         st.markdown(f"<div style='background-color: {sugg_color}; padding: 8px; border-radius: 8px;'><p style='color: white; font-size: 15px;'>💡 <b>Suggestion:</b> {suggestion}</p></div>", unsafe_allow_html=True)
 """
-!pip install streamlit pyngrok opencv-python-headless numpy tensorflow scikit-learn zipfile36
+import subprocess
+
+# Install required libraries
+subprocess.run(["pip", "install", "streamlit", "pyngrok", "opencv-python-headless", "numpy", "tensorflow", "scikit-learn", "zipfile36"], check=True)
+subprocess.run(["pip", "install", "--user", "streamlit", "pyngrok", "opencv-python-headless", "numpy", "tensorflow", "scikit-learn", "zipfile36"], check=True)
+
 
 import os
 import subprocess
