@@ -147,8 +147,19 @@ if uploaded_file is not None:
 """
 !pip install streamlit pyngrok opencv-python-headless numpy tensorflow scikit-learn zipfile36
 
-!streamlit run app.py &>/dev/null &
-!ps aux | grep streamlit
+import os
+import subprocess
+from pyngrok import ngrok
+
+# Authenticate ngrok (Replace with your actual token)
+subprocess.run(["ngrok", "authtoken", "YOUR_NGROK_AUTH_TOKEN"], check=True)
+
+# Start Streamlit in the background
+os.system("streamlit run app.py &")
+
+# Connect ngrok to the Streamlit app (port 8501)
+public_url = ngrok.connect(8501)
+print(f"🔗 Public URL: {public_url}")
 
 with open("app.py", "w") as f:
     f.write(app_code)
