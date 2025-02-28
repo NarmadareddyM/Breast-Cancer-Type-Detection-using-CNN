@@ -152,7 +152,7 @@ import subprocess
 from pyngrok import ngrok
 
 # Authenticate ngrok (Replace with your actual token)
-subprocess.run(["ngrok", "authtoken", 2tdAfI41DQw3o0rkbqdL9E5QqIU_2WervUYcnFLtREyrQY1J], check=True)
+subprocess.run(["ngrok", "authtoken", "2tdAfI41DQw3o0rkbqdL9E5QqIU_2WervUYcnFLtREyrQY1J"], check=True)
 
 # Start Streamlit in the background
 os.system("streamlit run app.py &")
